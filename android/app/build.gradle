@@ -7,7 +7,7 @@ android {
         applicationId "app.ptm.storymanager"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 1
+        versionCode (project.hasProperty('vc') ? project.property('vc').toInteger() : 1)
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         aaptOptions {
@@ -16,7 +16,18 @@ android {
             ignoreAssetsPattern '!.svn:!.git:!.ds_store:!*.scc:.*:!CVS:!thumbs.db:!picasa.ini:!*~'
         }
     }
+    signingConfigs {
+        ptm {
+            storeFile file('ptm.keystore')
+            storePassword 'ptmstore2026'
+            keyAlias 'ptm'
+            keyPassword 'ptmstore2026'
+        }
+    }
     buildTypes {
+        debug {
+            if (file('ptm.keystore').exists()) { signingConfig signingConfigs.ptm }
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'

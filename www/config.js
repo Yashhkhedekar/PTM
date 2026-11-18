@@ -1,2 +1,2 @@
-// Optional. Leave as is: the app asks for these once on first launch.
-window.PTM={url:'',key:'',site:''};
+// Login is switched off for now. To switch it on later, set login:true and fill url and key.
+window.PTM={login:false,url:'',key:'',site:''};

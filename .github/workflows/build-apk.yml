@@ -16,7 +16,12 @@ jobs:
       - run: npm ci
       - run: npx cap sync android
       - run: chmod +x android/gradlew
-      - run: cd android && ./gradlew assembleDebug --no-daemon
+      - name: Add signing key
+        env:
+          KS: ${{ secrets.KEYSTORE_B64 }}
+        run: |
+          if [ -n "$KS" ]; then echo "$KS" | base64 -d > android/app/ptm.keystore; fi
+      - run: cd android && ./gradlew assembleDebug --no-daemon -Pvc=${{ github.run_number }}
       - uses: actions/upload-artifact@v4
         with:
           name: PTM-apk
