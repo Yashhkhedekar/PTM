@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">PTM</string>
+    <string name="title_activity_main">PTM</string>
+    <string name="package_name">app.ptm.storymanager</string>
+    <string name="custom_url_scheme">app.ptm.storymanager</string>
+</resources>

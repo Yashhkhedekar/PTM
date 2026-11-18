@@ -1,0 +1,18 @@
+{
+  "name": "ptm-story-manager",
+  "version": "1.0.0",
+  "description": "Pratilipi Story Manager",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@capacitor/android": "^6.2.3",
+    "@capacitor/cli": "^6.2.3",
+    "@capacitor/core": "^6.2.3",
+    "@supabase/supabase-js": "^2.45.4"
+  },
+  "private": true
+}
