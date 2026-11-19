@@ -1,2 +1,4 @@
-// Login is switched off for now. To switch it on later, set login:true and fill url and key.
-window.PTM={login:false,url:'',key:'',site:''};
+// Login is ON. Phone and Google buttons only work after you set them up in Supabase:
+// set phone:true / google:true below once they are ready. Email code works with a plain Supabase project.
+// Optional: paste url and key here to skip the one-time setup screen.
+window.PTM={login:true,url:'',key:'',site:'',phone:false,google:false};
